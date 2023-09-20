@@ -34,11 +34,18 @@
   padding: 10px;
 }
 
+.head span{
+  background: linear-gradient(135deg, hsl(234, 95%, 41%), hsl(4, 78%, 52%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .calculator{
   border: 7px solid var(--Charcoal-Grey);
   background-color: var(--Dark-Slate-Grey);
   max-width: 370px;
-  min-height: 100vh;
+  max-height: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,7 +58,7 @@
 
 .display{
   /* border: 5px solid rgb(126, 38, 112); */
-  min-height: 200px;
+  min-height: 170px;
   padding: 1.5rem;
   display: flex;
   justify-content: flex-end;
@@ -59,7 +66,9 @@
   text-align: right;
   flex: 1 1 0%;
   color: rgb(255, 250, 244);
-  background: rgb(186, 115, 115);
+  background: linear-gradient(125deg, #c46868, #3d87a6);
+
+
 }
 
 .display .content{
@@ -138,4 +147,37 @@ transform: translate(-50%, -50% );
 .keys .key.operator span {
 	color: #59f425;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 600px) {
+  .head {
+    font-size: 2rem;
+  }
+
+  .calculator {
+    max-width: none;
+    width: 70%;
+    height: 500px;
+  }
+
+  .display {
+    min-height: 100px;
+    padding: 1rem;
+  }
+
+  .display .input {
+    font-size: 1rem;
+  }
+
+  .display .output {
+    font-size: 2rem;
+  }
+
+  .keys {
+    height: 300px;
+  }
+
+  .keys .key span {
+    font-size: 0.6rem;
+  }
 }

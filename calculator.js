@@ -20,7 +20,7 @@ for (let key of keys){
       display_Input.innerHTML = cleanInput(input);
     }
     else if ( value == "="){
-      let result = eval(input);
+      let result = eval( percentInput(input));
      display_Output.innerHTML = cleanOutput(result);
     }
     else if (value == "brackets"){
@@ -46,9 +46,11 @@ for (let key of keys){
       display_Input.innerHTML = cleanInput(input);
     }
 else {
-  input += value;
-  display_Input.innerHTML = cleanInput(input);
+  if (validateInput(value)){ input += value;
+    display_Input.innerHTML = cleanInput(input);}
+ 
 }
+
       
   })
 }
@@ -108,9 +110,37 @@ if (decimal){
 }
 return output_array.join("");
 }
-  
+
+function validateInput(value){
+  let lastInput = input.slice(-1);
+  let operators = ["+", "*", "/", "-"];
+
+  if (value == "." && lastInput == "."){
+    return false;
+  }
+
+  if (operators.includes(value)){
+    if (operators.includes(lastInput)) {
+      return false;
+    } else {
+      return true;
+    }
+
+  }
+  return true;
+}
+ 
+function percentInput(input){
+  let input_array = input.split("");
+  for ( let i = 0; i < input_array.length; i++){
+    if (input_array[i] == "%"){
+      input_array[i] = "/100";
+    }
 
 
+  }
+  return input_array.join("");
+}
 
 
 

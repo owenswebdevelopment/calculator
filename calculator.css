@@ -137,9 +137,10 @@ box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
   color: var(--Tomato);
 transform: translate(-50%, -50% );
 }
-.keys .key:hover{
+.keys .key.active:hover{
   background: linear-gradient(135deg, #108898, #1e5852);
   }
+
 .keys .key.action span {
 	color: #26FED7;
   font-weight: 700;
@@ -158,11 +159,11 @@ transform: translate(-50%, -50% );
   .calculator {
     max-width: none;
     width: 70%;
-    height: 500px;
+    height: 600px;
   }
 
   .display {
-    min-height: 100px;
+    min-height: 120px;
     padding: 1rem;
   }
 

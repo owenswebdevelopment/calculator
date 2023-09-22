@@ -10,6 +10,7 @@ for (let key of keys){
   const value = key.dataset.key;
 
   key.addEventListener('click', () => {
+    
     if (value == "clear"){
       input = "";
       display_Input.innerHTML = "";
